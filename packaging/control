@@ -1,0 +1,9 @@
+Package: princetheme
+Version: 1.0.0
+Section: admin
+Priority: optional
+Architecture: all
+Maintainer: PrinceTheProgrammer <prince@example.com>
+Description: The Enterprise Grade GRUB Theme
+ A highly customizable, modern, and automated GRUB theme suite.
+ Includes 100+ color variants, a terminal store, and management scripts.

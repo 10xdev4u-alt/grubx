@@ -12,6 +12,15 @@ Welcome to **PrinceTheme**, an Enterprise-Grade, highly polished GRUB bootloader
 - **Automated Install:** Simple one-click installation script.
 - **Variants:** Includes multiple layout options to suit your taste.
 
+### 🌐 Web Gallery
+Want to see them before you install? We have generated a static HTML gallery.
+Open `docs/gallery.html` in your browser to visualize all 100+ themes instantly.
+
+### 📦 CI/CD & Automation
+This project is now **Enterprise Certified**.
+- **GitHub Actions:** Automatically validates all themes on every push.
+- **Debian Packaging:** Build your own `.deb` file using `packaging/build_deb.sh`.
+
 ### 🛒 PrinceTheme Store
 For the ultimate experience, use our interactive TUI (Terminal User Interface) Store.
 It allows you to browse and install any of the 100+ themes graphically.
