@@ -12,6 +12,14 @@ Welcome to **PrinceTheme**, an Enterprise-Grade, highly polished GRUB bootloader
 - **Automated Install:** Simple one-click installation script.
 - **Variants:** Includes multiple layout options to suit your taste.
 
+### 🛒 PrinceTheme Store
+For the ultimate experience, use our interactive TUI (Terminal User Interface) Store.
+It allows you to browse and install any of the 100+ themes graphically.
+
+```bash
+sudo ./theme_store.sh
+```
+
 ### 🎨 The 100 Theme Collection
 We didn't just stop at 3. We built an engine to generate **100+ Unique Variants**.
 From `Dracula` to `Matrix` to `CyberYellow`, we have it all.
