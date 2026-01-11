@@ -21,6 +21,17 @@ This project is now **Enterprise Certified**.
 - **GitHub Actions:** Automatically validates all themes on every push.
 - **Debian Packaging:** Build your own `.deb` file using `packaging/build_deb.sh`.
 
+### 🌍 Language Support (i18n)
+PrinceTheme now speaks your language! Supported languages:
+- **English** (Default)
+- **Tamil** (தமிழ்)
+- **Spanish** (Español)
+
+To switch languages, run:
+```bash
+./set_language.sh
+```
+
 ### 🛒 PrinceTheme Store
 For the ultimate experience, use our interactive TUI (Terminal User Interface) Store.
 It allows you to browse and install any of the 100+ themes graphically.
