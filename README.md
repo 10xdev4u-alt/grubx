@@ -21,6 +21,19 @@ This project is now **Enterprise Certified**.
 - **GitHub Actions:** Automatically validates all themes on every push.
 - **Debian Packaging:** Build your own `.deb` file using `packaging/build_deb.sh`.
 
+### 🛠️ Developer SDK
+We provide a Python SDK to manage themes programmatically.
+
+```bash
+# Install the SDK
+pip install .
+
+# Use the CLI
+princetheme check --dir PrinceTheme/variants
+princetheme build
+princetheme gallery
+```
+
 ### 🅰️ Font Management
 PrinceTheme supports custom fonts!
 1.  **Generate Fonts:** Run `sudo tools/font_wizard.sh` to find and convert your system fonts (Hack, FiraCode, etc.) to GRUB format.
