@@ -1,0 +1,49 @@
+# Global Property
+title-text: ""
+desktop-image: "background.png"
+desktop-image-scale-method: "stretch"
+desktop-color: "#1E1E2E"
+terminal-font: "font.pf2"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
+# Logo image (Centered and lifted slightly)
++ image {
+    left = 50%-256
+    top = 8%             # Lifted up to give the menu room below
+    width = 512
+    height = 512
+    file = "logo.png"
+}
+
+# Show the boot menu (Pushed down to clear the 512px logo)
++ boot_menu {
+    left = 50%-240
+    top = 62%            # Pushed down from 55% to avoid overlap
+    width = 480
+    height = 25%         # Slightly shorter height for a compact look
+    item_font = "font.pf2"
+    item_color = "#CDD6F4"
+    selected_item_color = "#89B4FA" 
+    icon_width = 32
+    icon_height = 32
+    item_icon_space = 25 # More space between icon and text for elegance
+    item_height = 42     # Taller items look more premium
+    item_padding = 5
+    item_spacing = 10
+    selected_item_pixmap_style = "select_*.png"
+}
+
+# Countdown Label
++ label {
+    top = 92%
+    left = 0
+    width = 100%
+    align = "center"
+    id = "__timeout__"
+    text = "System ready in %d seconds"
+    font = "font.pf2"
+    color = "#A6ADC8"
+}
