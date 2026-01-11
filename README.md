@@ -114,5 +114,10 @@ We welcome contributions! Please see `CONTRIBUTING.md` for details.
 ## License
 MIT License. See `LICENSE` for more information.
 
+## Credits
+- **PrinceTheProgrammer**: Lead Architect.
+- **Community**: For the inspiration behind the 100+ variants.
+- **Open Source**: Built on the shoulders of giants.
+
 ---
 *Crafted with 🔥 by PrinceTheProgrammer*
