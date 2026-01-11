@@ -44,6 +44,13 @@ mkdir -p "$INSTALL_PATH/lib"
 cp locales/*.sh "$INSTALL_PATH/locales/"
 cp lib/*.sh "$INSTALL_PATH/lib/"
 
+# Install Man Page
+if [ -d "/usr/share/man/man1" ]; then
+    echo "Installing man page..."
+    cp man/princetheme.1 /usr/share/man/man1/
+    gzip -f /usr/share/man/man1/princetheme.1
+fi
+
 # Configure GRUB
 echo "${MSG_CONFIGURING}"
 
