@@ -3,6 +3,13 @@
 # PrinceTheme Uninstaller
 # Author: PrinceTheProgrammer
 
+# Import Localization
+if [ -f "lib/i18n.sh" ]; then
+    source lib/i18n.sh
+elif [ -f "/boot/grub/themes/PrinceTheme/lib/i18n.sh" ]; then
+    source /boot/grub/themes/PrinceTheme/lib/i18n.sh
+fi
+
 THEME_DIR="/boot/grub/themes"
 THEME_NAME="PrinceTheme"
 INSTALL_PATH="$THEME_DIR/$THEME_NAME"
@@ -12,11 +19,11 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-echo -e "${RED}Starting PrinceTheme Uninstallation...${NC}"
+echo -e "${RED}${MSG_REMOVING_OLD}...${NC}"
 
 # Check for root
 if [ "$EUID" -ne 0 ]; then
-  echo -e "${RED}Please run as root.${NC}"
+  echo -e "${RED}${MSG_ROOT_REQUIRED}${NC}"
   exit 1
 fi
 
@@ -29,17 +36,17 @@ else
 fi
 
 # Restore GRUB config
-echo "Restoring GRUB configuration..."
+echo "${MSG_CONFIGURING}"
 sed -i '/GRUB_THEME=.*PrinceTheme\/theme.txt/d' /etc/default/grub
 
 # Update GRUB
-echo "Updating GRUB configuration..."
+echo "${MSG_UPDATING}"
 if command -v update-grub &> /dev/null; then
     update-grub
 elif command -v grub-mkconfig &> /dev/null; then
     grub-mkconfig -o /boot/grub/grub.cfg
 else
-    echo -e "${RED}Could not find update-grub or grub-mkconfig. Please update grub manually.${NC}"
+    echo -e "${RED}${MSG_NOT_FOUND}${NC}"
 fi
 
 echo -e "${GREEN}Uninstallation Complete!${NC}"
