@@ -12,6 +12,21 @@ Welcome to **PrinceTheme**, an Enterprise-Grade, highly polished GRUB bootloader
 - **Automated Install:** Simple one-click installation script.
 - **Variants:** Includes multiple layout options to suit your taste.
 
+## Variants
+We now include multiple style variants out of the box!
+- **Default:** The classic polished look.
+- **Cyberpunk:** Neon colors and right-aligned menu.
+- **Minimal:** No icons, no clutter, just text.
+- **Retro:** Hacker-style green on black terminal look.
+
+### Switching Variants
+You can easily switch between themes using our new script:
+
+```bash
+sudo ./switch_theme.sh
+```
+This will show you a menu of available styles and apply your choice instantly.
+
 ## Installation
 
 ### Automated Installation (Recommended)

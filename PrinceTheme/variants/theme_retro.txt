@@ -1,0 +1,50 @@
+# Global Property
+title-text: ""
+desktop-image: "" # No Image, pure color
+desktop-color: "#000000"
+terminal-font: "font.pf2"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
+# ASCII Header (Simulated with label)
++ label {
+    top = 10%
+    left = 0
+    width = 100%
+    align = "center"
+    text = "> SYSTEM BIOS V2.0"
+    font = "font.pf2"
+    color = "#00FF00"
+}
+
+# The Menu (Green Terminal Style)
++ boot_menu {
+    left = 10%
+    top = 30%
+    width = 80%
+    height = 50%
+    item_font = "font.pf2"
+    item_color = "#008800"        # Dim Green
+    selected_item_color = "#00FF00" # Bright Green
+    icon_width = 32
+    icon_height = 32
+    item_icon_space = 20
+    item_height = 30
+    item_padding = 2
+    item_spacing = 2
+    selected_item_pixmap_style = "select_*.png" 
+}
+
+# Command Prompt Style Timeout
++ label {
+    top = 90%
+    left = 10%
+    width = 80%
+    align = "left"
+    id = "__timeout__"
+    text = "root@bootloader:~$ auto_start -t %d"
+    font = "font.pf2"
+    color = "#00FF00"
+}

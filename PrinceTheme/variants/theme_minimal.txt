@@ -1,0 +1,42 @@
+# Global Property
+title-text: ""
+desktop-image: "background.png"
+desktop-image-scale-method: "stretch"
+desktop-color: "#000000"
+terminal-font: "font.pf2"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
+# No Logo. Just Cleanliness.
+
+# The Menu (Centered, very simple)
++ boot_menu {
+    left = 30%
+    top = 40%
+    width = 40%
+    height = 40%
+    item_font = "font.pf2"
+    item_color = "#888888"        # Grey inactive
+    selected_item_color = "#FFFFFF" # Bright White active
+    icon_width = 0                # No icons!
+    icon_height = 0
+    item_icon_space = 0
+    item_height = 30
+    item_padding = 0
+    item_spacing = 5
+    # No pixmap style implies text-only selection (or fallback)
+}
+
+# Subtle Timeout
++ label {
+    top = 80%
+    left = 0
+    width = 100%
+    align = "center"
+    id = "__timeout__"
+    text = "Booting in %d..."
+    font = "font.pf2"
+    color = "#444444"
+}
