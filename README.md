@@ -2,6 +2,11 @@
 
 ![PrinceTheme Logo](PrinceTheme/logo.png)
 
+![Build Status](https://img.shields.io/github/actions/workflow/status/PrinceTheProgrammer/PrinceTheme/ci.yml?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge)
+![Themes](https://img.shields.io/badge/themes-100%2B-purple?style=for-the-badge)
+
 ## Overview
 Welcome to **PrinceTheme**, an Enterprise-Grade, highly polished GRUB bootloader theme designed for modern systems. This theme features a clean, minimal aesthetic with a focus on readability and style. It includes high-quality icons, a custom font, and a sleek selection interface.
 
