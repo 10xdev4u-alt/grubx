@@ -3,6 +3,13 @@
 # PrinceTheme Variant Switcher
 # Author: PrinceTheProgrammer
 
+# Import Localization
+if [ -f "lib/i18n.sh" ]; then
+    source lib/i18n.sh
+elif [ -f "/boot/grub/themes/PrinceTheme/lib/i18n.sh" ]; then
+    source /boot/grub/themes/PrinceTheme/lib/i18n.sh
+fi
+
 THEME_DIR="/boot/grub/themes/PrinceTheme"
 VARIANTS_DIR="$THEME_DIR/variants"
 
@@ -15,7 +22,7 @@ NC='\033[0m'
 
 # Check root
 if [ "$EUID" -ne 0 ]; then
-  echo -e "${RED}Please run as root (sudo).${NC}"
+  echo -e "${RED}${MSG_ROOT_REQUIRED}${NC}"
   exit 1
 fi
 
@@ -25,8 +32,8 @@ if [ ! -d "$THEME_DIR" ]; then
     exit 1
 fi
 
-echo -e "${CYAN}=== PrinceTheme Variant Switcher ===${NC}"
-echo "Select a theme variant to apply:"
+echo -e "${CYAN}=== ${MSG_WELCOME} Switcher ===${NC}"
+echo "${MSG_SELECT_THEME}"
 echo ""
 
 # Get list of variants
@@ -54,19 +61,19 @@ if [[ ! "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -ge "$count" ] || [ "$choice" -l
 fi
 
 selected_variant="${variants[$choice]}"
-echo -e "Switching to: ${GREEN}$(basename "$selected_variant")${NC}"
+echo -e "${MSG_COPYING} ${GREEN}$(basename "$selected_variant")${NC}"
 
 # Apply theme
 cp "$selected_variant" "$THEME_DIR/theme.txt"
 
 # Update GRUB
-echo "Updating GRUB..."
+echo "${MSG_UPDATING}"
 if command -v update-grub &> /dev/null; then
     update-grub
 elif command -v grub-mkconfig &> /dev/null; then
     grub-mkconfig -o /boot/grub/grub.cfg
 else
-    echo -e "${RED}Could not find update-grub or grub-mkconfig. Please update grub manually.${NC}"
+    echo -e "${RED}${MSG_NOT_FOUND}${NC}"
 fi
 
-echo -e "${GREEN}Theme switched successfully!${NC}"
+echo -e "${GREEN}${MSG_SUCCESS}${NC}"
