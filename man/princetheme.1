@@ -1,0 +1,42 @@
+.TH PRINCETHEME 1 "Jan 2026" "1.0.0" "PrinceTheme Manual"
+
+.SH NAME
+princetheme \- Enterprise Grade GRUB Theme Manager
+
+.SH SYNOPSIS
+.B princetheme
+.RI [ command ] [ options ]
+
+.SH DESCRIPTION
+.B PrinceTheme
+is a comprehensive suite for managing GRUB2 bootloader themes. It includes a Python SDK, a TUI Store, and over 100 variants.
+
+.SH COMMANDS
+.TP
+.B check
+Validate all theme files in the variants directory.
+.TP
+.B build
+Generate theme variants from the internal palette engine.
+.TP
+.B gallery
+Generate an HTML gallery of all available themes.
+
+.SH SCRIPTS
+.TP
+.B switch_theme.sh
+Interactive TUI to switch between variants.
+.TP
+.B switch_font.sh
+Interactive TUI to switch fonts.
+.TP
+.B theme_store.sh
+The full visual store experience.
+
+.SH FILES
+.TP
+.I /boot/grub/themes/PrinceTheme/theme.txt
+The active configuration file.
+
+.SH AUTHOR
+PrinceTheProgrammer
