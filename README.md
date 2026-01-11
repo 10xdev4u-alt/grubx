@@ -12,6 +12,15 @@ Welcome to **PrinceTheme**, an Enterprise-Grade, highly polished GRUB bootloader
 - **Automated Install:** Simple one-click installation script.
 - **Variants:** Includes multiple layout options to suit your taste.
 
+### 🎨 The 100 Theme Collection
+We didn't just stop at 3. We built an engine to generate **100+ Unique Variants**.
+From `Dracula` to `Matrix` to `CyberYellow`, we have it all.
+
+You can find them all in the `PrinceTheme/variants/` folder.
+
+**Want to make your own?**
+Check out `tools/generate_themes.py`. You can add your own color palettes and regenerate the entire suite in seconds.
+
 ## Variants
 We now include multiple style variants out of the box!
 - **Default:** The classic polished look.
