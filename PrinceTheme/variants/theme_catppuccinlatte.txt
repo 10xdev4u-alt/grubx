@@ -1,0 +1,40 @@
+# Generated Theme: CatppuccinLatte
+# Palette: CatppuccinLatte
+
+title-text: ""
+desktop-image: "background.png" 
+desktop-image-scale-method: "stretch"
+desktop-color: "#eff1f5"
+terminal-font: "font.pf2"
+terminal-left: "0"
+terminal-top: "0"
+terminal-width: "100%"
+terminal-height: "100%"
+
++ boot_menu {
+    left = 50%-250
+    top = 50%-100
+    width = 500
+    height = 50%
+    item_font = "font.pf2"
+    item_color = "#4c4f69"
+    selected_item_color = "#ea76cb"
+    icon_width = 32
+    icon_height = 32
+    item_icon_space = 20
+    item_height = 40
+    item_padding = 5
+    item_spacing = 10
+    selected_item_pixmap_style = "select_*.png"
+}
+
++ label {
+    top = 90%
+    left = 0
+    width = 100%
+    align = "center"
+    id = "__timeout__"
+    text = "Booting CatppuccinLatte configuration in %d seconds..."
+    font = "font.pf2"
+    color = "#4c4f69"
+}
