@@ -3,6 +3,13 @@
 # PrinceTheme Store - TUI Interface
 # Author: PrinceTheProgrammer
 
+# Import Localization
+if [ -f "lib/i18n.sh" ]; then
+    source lib/i18n.sh
+elif [ -f "/boot/grub/themes/PrinceTheme/lib/i18n.sh" ]; then
+    source /boot/grub/themes/PrinceTheme/lib/i18n.sh
+fi
+
 THEME_DIR="/boot/grub/themes/PrinceTheme"
 VARIANTS_DIR="./PrinceTheme/variants"
 CURRENT_THEME_FILE="$THEME_DIR/theme.txt"
@@ -21,20 +28,18 @@ fi
 
 # Check root
 if [ "$EUID" -ne 0 ]; then
-    whiptail --title "Permission Error" --msgbox "You must run Prince Store as root (sudo)." 8 45
+    whiptail --title "Permission Error" --msgbox "${MSG_ROOT_REQUIRED}" 8 45
     exit 1
 fi
 
 # Check installation
 if [ ! -d "$THEME_DIR" ]; then
-    whiptail --title "Installation Error" --msgbox "PrinceTheme is not installed in /boot/grub/themes.\n\nPlease run install.sh first." 8 60
+    whiptail --title "Installation Error" --msgbox "PrinceTheme is not installed in /boot/grub/themes.\nPlease run install.sh first." 8 60
     exit 1
 fi
 
 while true; do
     # Generate list for whiptail
-    # Format: "filename" "description"
-    # We use a loop to build the array properly
     OPTIONS=()
     
     # Check if variants directory exists locally or in /boot
@@ -49,7 +54,6 @@ while true; do
     fi
 
     # Read files and populate options
-    # We display the theme name (stripped of 'theme_' and '.txt')
     for file in "$SEARCH_DIR"/theme_*.txt; do
         filename=$(basename "$file")
         clean_name=$(echo "$filename" | sed 's/theme_//' | sed 's/\.txt//' | tr '[:lower:]' '[:upper:]')
@@ -57,8 +61,8 @@ while true; do
     done
 
     # Show Menu
-    CHOICE=$(whiptail --title "PrinceTheme Store (Enterprise Edition)" \
-                      --menu "Select a Theme Variant to Apply:\n(Press ESC to Exit)" \
+    CHOICE=$(whiptail --title "${MSG_STORE_TITLE}" \
+                      --menu "${MSG_STORE_MENU}" \
                       22 70 14 \
                       "${OPTIONS[@]}" \
                       3>&1 1>&2 2>&3)
@@ -66,14 +70,13 @@ while true; do
     EXIT_STATUS=$?
 
     if [ $EXIT_STATUS -ne 0 ]; then
-        echo "Exiting Prince Store. Have a nice day!"
         exit 0
     fi
 
     # Confirm Selection
     TARGET_FILE="$SEARCH_DIR/$CHOICE"
     
-    if (whiptail --title "Confirm Installation" --yesno "Are you sure you want to install the '$CHOICE' variant?" 8 60); then
+    if (whiptail --title "Confirm" --yesno "${MSG_INSTALL_CONFIRM} ($CHOICE)" 8 60); then
         
         # Show progress gauge
         {
@@ -92,9 +95,9 @@ while true; do
                 grub-mkconfig -o /boot/grub/grub.cfg &> /dev/null
             fi
             echo 100
-        } | whiptail --gauge "Installing Theme & Updating GRUB..." 6 50 0
+        } | whiptail --gauge "${MSG_INSTALLING}" 6 50 0
 
-        whiptail --title "Success" --msgbox "Theme '$CHOICE' applied successfully!" 8 45
+        whiptail --title "${MSG_SUCCESS}" --msgbox "${MSG_COMPLETE}" 8 45
     else
         # User cancelled
         continue
