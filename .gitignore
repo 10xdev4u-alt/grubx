@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Vagrant
+.vagrant/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Project Specific
+prince.config
+*.deb
